@@ -377,6 +377,42 @@ a { color: inherit; text-decoration: none; }
 .news-hed { font-size: 12px; font-weight: 600; line-height: 1.35; color: var(--cream); }
 .news-sum { font-size: 11px; line-height: 1.45; color: var(--muted); }
 
+/* ─── GUIDE PAGES — HERO + INLINE IMAGES ───────────────────── */
+
+.guide-hero {
+  width: 100%;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.guide-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 180px;
+  background: linear-gradient(transparent, var(--bg));
+  pointer-events: none;
+}
+.guide-img {
+  width: 100%;
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin: 28px 0 6px;
+  background-color: var(--faint);
+}
+.guide-img-caption {
+  font-size: 11px; color: var(--muted);
+  font-style: italic; margin-bottom: 24px;
+  display: block; text-align: center;
+}
+@media (max-width: 600px) {
+  .guide-hero { height: 220px; }
+  .guide-img { height: 180px; }
+}
+
 /* ─── ARTICLE PAGE ─────────────────────────────────────────── */
 
 .article-page { max-width: 720px; margin: 0 auto; padding: 44px 20px 60px; }
