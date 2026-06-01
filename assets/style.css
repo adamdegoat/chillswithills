@@ -377,6 +377,59 @@ a { color: inherit; text-decoration: none; }
 .news-hed { font-size: 12px; font-weight: 600; line-height: 1.35; color: var(--cream); }
 .news-sum { font-size: 11px; line-height: 1.45; color: var(--muted); }
 
+/* ─── CAMP WEATHER PANEL ────────────────────────────────────── */
+
+.weather-panel {
+  background: linear-gradient(135deg, #0d0f0a 0%, #111410 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 32px 20px;
+}
+.weather-inner { max-width: 1200px; margin: 0 auto; }
+.weather-header {
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.weather-eyebrow {
+  font-size: 9px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--olive-lt);
+}
+.weather-title {
+  font-family: var(--font-head); font-size: 18px; font-weight: 800; color: var(--cream);
+}
+.weather-updated { font-size: 10px; color: var(--muted); margin-left: auto; font-style: italic; }
+.weather-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+.weather-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+  padding: 14px 16px; display: flex; flex-direction: column; gap: 12px;
+}
+.wc-head { display: flex; justify-content: space-between; align-items: flex-start; }
+.wc-loc { font-size: 13px; font-weight: 700; color: var(--cream); line-height: 1.2; }
+.wc-sub { font-size: 10px; color: var(--muted); margin-top: 2px; letter-spacing: 0.04em; }
+.wc-score { font-size: 9px; font-weight: 800; letter-spacing: 0.06em; text-align: right; line-height: 1.4; }
+.wc-current { display: flex; align-items: center; gap: 10px; }
+.wc-icon { font-size: 30px; line-height: 1; flex-shrink: 0; }
+.wc-temp { font-family: var(--font-head); font-size: 30px; font-weight: 800; color: var(--cream); line-height: 1; }
+.wc-detail { display: flex; flex-direction: column; gap: 3px; font-size: 11px; color: var(--muted); }
+.wc-forecast {
+  display: flex; gap: 0; border-top: 1px solid var(--border); padding-top: 10px;
+}
+.wf-day { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.wf-dname {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+}
+.wf-icon { font-size: 15px; }
+.wf-temp { font-size: 11px; font-weight: 700; color: var(--cream); }
+.wf-rain { font-size: 10px; color: var(--olive-lt); }
+.weather-loading { font-size: 12px; color: var(--muted); padding: 16px 0; }
+
+@media (max-width: 700px) {
+  .weather-grid { grid-template-columns: 1fr; gap: 10px; }
+  .weather-title { font-size: 16px; }
+}
+
 /* ─── GUIDE PAGES — HERO + INLINE IMAGES ───────────────────── */
 
 .guide-hero {
