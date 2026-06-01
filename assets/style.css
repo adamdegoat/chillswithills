@@ -495,21 +495,50 @@ a { color: inherit; text-decoration: none; }
   .why-card:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
 }
 @media (max-width: 600px) {
-  .mast-nav { display: none; }
+  /* Nav: collapse into a full-width tab bar below the logo */
+  .mast-inner {
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+  }
+  .mast-logo { padding: 12px 16px; }
+  .mast-nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+  .mast-nav a {
+    flex: 1; text-align: center;
+    padding: 10px 4px;
+    font-size: 10px;
+    border-right: 1px solid var(--border);
+  }
+  .mast-nav a:last-child { border-right: none; }
+
   .tutorial-grid { grid-template-columns: 1fr; }
+  .tutorial-card { height: auto; min-height: 200px; }
   .hiw-grid { grid-template-columns: 1fr; }
   .why-inner { grid-template-columns: 1fr 1fr; }
-  .lifestyle-hero { min-height: 380px; }
-  .hero-content { padding: 40px 20px 60px; }
+  .lifestyle-hero { min-height: 340px; }
+  .hero-content { padding: 32px 16px 52px; }
   .hiw-flow { flex-direction: column; gap: 4px; }
   .flow-arrow { transform: rotate(90deg); }
   .news-grid { grid-template-columns: 1fr 1fr; }
   .drop-header { flex-direction: column; gap: 4px; }
   .drop-sub { margin-left: 0; }
+
+  /* Tips section — tighter on mobile */
+  .tips-section { padding: 36px 16px; }
+  .tips-title { font-size: 22px; }
+  .tips-header { margin-bottom: 28px; }
+  .tips-columns { gap: 24px; }
 }
 @media (max-width: 420px) {
   .news-grid { grid-template-columns: 1fr; }
   .why-inner { grid-template-columns: 1fr; }
   .why-card { border-right: none; border-bottom: 1px solid var(--border); }
   .why-card:last-child { border-bottom: none; }
+  .hero-content { padding: 28px 16px 44px; }
 }
