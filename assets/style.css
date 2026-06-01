@@ -380,78 +380,76 @@ a { color: inherit; text-decoration: none; }
 /* ─── PHILOSOPHY ────────────────────────────────────────────── */
 
 .philosophy {
-  background: rgba(10,12,8,0.97);
+  background: #0b0d09;
   border-bottom: 1px solid var(--border);
-  padding: 18px 24px;
+  padding: 48px 24px;
+  text-align: center;
 }
-.philosophy-inner {
-  max-width: 860px; margin: 0 auto;
-  display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap;
-}
+.philosophy-inner { max-width: 640px; margin: 0 auto; }
 .phil-quote {
   font-family: var(--font-head);
-  font-size: 14px; font-weight: 700; font-style: italic;
-  color: rgba(230,220,200,0.7); line-height: 1.4;
-  flex-shrink: 0;
+  font-size: clamp(20px, 3.5vw, 30px);
+  font-weight: 700; font-style: italic;
+  color: var(--cream); line-height: 1.4;
+  margin-bottom: 16px;
 }
 .phil-sub {
-  font-size: 12px; color: var(--muted); line-height: 1.55;
+  font-size: 13px; color: var(--muted); line-height: 1.7;
 }
 @media (max-width: 600px) {
-  .philosophy-inner { flex-direction: column; gap: 6px; }
+  .philosophy { padding: 36px 20px; }
 }
 
 /* ─── CAMP WEATHER PANEL ────────────────────────────────────── */
 
 .weather-panel {
-  background: linear-gradient(135deg, #0d0f0a 0%, #111410 100%);
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
-  padding: 18px 20px;
+  padding: 0 20px;
 }
 .weather-inner { max-width: 1200px; margin: 0 auto; }
-.weather-header {
-  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-  margin-bottom: 12px;
+.weather-bar {
+  display: flex; align-items: stretch; gap: 0;
+  min-height: 44px;
 }
-.weather-eyebrow {
-  font-size: 9px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--olive-lt);
+.weather-label {
+  font-size: 9px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--olive-lt); padding: 0 18px 0 0; display: flex; align-items: center;
+  border-right: 1px solid var(--border); flex-shrink: 0; white-space: nowrap;
 }
-.weather-title {
-  font-family: var(--font-head); font-size: 15px; font-weight: 800; color: var(--cream);
+.weather-locs {
+  display: flex; flex: 1; overflow-x: auto; scrollbar-width: none;
 }
-.weather-updated { font-size: 10px; color: var(--muted); margin-left: auto; font-style: italic; }
-.weather-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+.weather-locs::-webkit-scrollbar { display: none; }
+.weather-loc {
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 3px; padding: 8px 20px;
+  border-right: 1px solid var(--border); flex-shrink: 0;
 }
-.weather-card {
-  background: var(--card); border: 1px solid var(--border); border-radius: 7px;
-  padding: 10px 12px; display: flex; flex-direction: column; gap: 8px;
+.wl-top { display: flex; align-items: center; gap: 6px; }
+.wl-name { font-size: 10px; font-weight: 700; letter-spacing: 0.04em; color: var(--cream); }
+.wl-country {
+  font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); border: 1px solid var(--border); border-radius: 2px;
+  padding: 1px 4px;
 }
-.wc-head { display: flex; justify-content: space-between; align-items: center; }
-.wc-loc { font-size: 12px; font-weight: 700; color: var(--cream); line-height: 1.2; }
-.wc-sub { font-size: 9px; color: var(--muted); letter-spacing: 0.04em; }
-.wc-score { font-size: 9px; font-weight: 800; letter-spacing: 0.05em; text-align: right; }
-.wc-current { display: flex; align-items: center; gap: 8px; }
-.wc-icon { font-size: 22px; line-height: 1; flex-shrink: 0; }
-.wc-temp { font-family: var(--font-head); font-size: 22px; font-weight: 800; color: var(--cream); line-height: 1; }
-.wc-detail { display: flex; flex-direction: column; gap: 2px; font-size: 10px; color: var(--muted); }
-.wc-forecast {
-  display: flex; gap: 0; border-top: 1px solid var(--border); padding-top: 7px;
+.wl-main { display: flex; align-items: center; gap: 6px; }
+.wl-icon { font-size: 14px; line-height: 1; }
+.wl-temp { font-size: 13px; font-weight: 700; color: var(--cream); }
+.wl-score { font-size: 9px; font-weight: 700; letter-spacing: 0.04em; }
+.wl-forecast { display: flex; gap: 8px; }
+.wf-pill { font-size: 9px; color: var(--muted); white-space: nowrap; }
+.weather-updated {
+  font-size: 9px; color: var(--muted); padding: 0 0 0 14px;
+  display: flex; align-items: center; flex-shrink: 0;
 }
-.wf-day { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; }
-.wf-dname {
-  font-size: 8px; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--muted);
-}
-.wf-icon { font-size: 13px; }
-.wf-temp { font-size: 10px; font-weight: 700; color: var(--cream); }
-.wf-rain { font-size: 9px; color: var(--olive-lt); }
-.weather-loading { font-size: 12px; color: var(--muted); padding: 10px 0; }
+.weather-loading { font-size: 11px; color: var(--muted); padding: 0 16px; display: flex; align-items: center; }
 
-@media (max-width: 700px) {
-  .weather-grid { grid-template-columns: 1fr; gap: 8px; }
-  .weather-panel { padding: 14px 16px; }
+@media (max-width: 600px) {
+  .weather-bar { flex-wrap: wrap; min-height: auto; padding: 10px 0; gap: 8px; }
+  .weather-label { border-right: none; padding: 0; }
+  .weather-loc { border-right: none; border-bottom: 1px solid var(--border); padding: 8px 0; width: 100%; }
+  .weather-loc:last-child { border-bottom: none; }
 }
 
 /* ─── GUIDE PAGES — HERO + INLINE IMAGES ───────────────────── */
