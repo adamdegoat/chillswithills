@@ -168,10 +168,8 @@ a { color: inherit; text-decoration: none; }
   background: var(--card);
   background-size: cover; background-position: center;
   border: 1px solid var(--border);
-  transition: transform 0.2s, border-color 0.2s;
-  cursor: pointer;
+  cursor: default;
 }
-.tutorial-card:hover { transform: translateY(-4px); border-color: rgba(200,114,42,0.5); }
 .tutorial-card::before {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.85) 100%);
@@ -195,10 +193,10 @@ a { color: inherit; text-decoration: none; }
   color: #fff; line-height: 1.25; margin-bottom: 5px;
 }
 .tutorial-desc { font-size: 12px; line-height: 1.5; color: rgba(255,255,255,0.7); }
-.tutorial-link {
+.tutorial-level {
   display: inline-block; margin-top: 8px;
-  font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
-  color: var(--rust-lt);
+  font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
 }
 
 /* ─── GALLERY STRIP ────────────────────────────────────────── */
@@ -225,7 +223,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 8px; overflow: hidden;
   position: relative;
   background-size: cover; background-position: center;
-  cursor: pointer;
+  cursor: default;
 }
 .gallery-card::before {
   content: ''; position: absolute; inset: 0;
